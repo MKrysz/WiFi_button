@@ -1,0 +1,393 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L RF_Module:ESP-12E U?
+U 1 1 6158A0EA
+P 6050 1700
+F 0 "U?" H 6500 2450 50  0000 C CNN
+F 1 "ESP-12E" H 6400 1050 50  0000 C CNN
+F 2 "RF_Module:ESP-12E" H 6050 1700 50  0001 C CNN
+F 3 "http://wiki.ai-thinker.com/_media/esp8266/esp8266_series_modules_user_manual_v1.1.pdf" H 5700 1800 50  0001 C CNN
+	1    6050 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 6158B3CB
+P 3650 1350
+F 0 "D?" V 3689 1232 50  0000 R CNN
+F 1 "Red" V 3598 1232 50  0000 R CNN
+F 2 "" H 3650 1350 50  0001 C CNN
+F 3 "~" H 3650 1350 50  0001 C CNN
+	1    3650 1350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED D?
+U 1 1 6158B9BE
+P 4050 1350
+F 0 "D?" V 4089 1232 50  0000 R CNN
+F 1 "Blue" V 3998 1232 50  0000 R CNN
+F 2 "" H 4050 1350 50  0001 C CNN
+F 3 "~" H 4050 1350 50  0001 C CNN
+	1    4050 1350
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6158BB69
+P 3650 1000
+F 0 "R?" H 3720 1046 50  0000 L CNN
+F 1 "R" H 3720 955 50  0000 L CNN
+F 2 "" V 3580 1000 50  0001 C CNN
+F 3 "~" H 3650 1000 50  0001 C CNN
+	1    3650 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6158BE0F
+P 4050 1000
+F 0 "R?" H 4120 1046 50  0000 L CNN
+F 1 "R" H 4120 955 50  0000 L CNN
+F 2 "" V 3980 1000 50  0001 C CNN
+F 3 "~" H 4050 1000 50  0001 C CNN
+	1    4050 1000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6158C103
+P 3150 2250
+F 0 "R?" H 3220 2296 50  0000 L CNN
+F 1 "R" H 3220 2205 50  0000 L CNN
+F 2 "" V 3080 2250 50  0001 C CNN
+F 3 "~" H 3150 2250 50  0001 C CNN
+	1    3150 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 6158C109
+P 3150 2650
+F 0 "R?" H 3220 2696 50  0000 L CNN
+F 1 "R" H 3220 2605 50  0000 L CNN
+F 2 "" V 3080 2650 50  0001 C CNN
+F 3 "~" H 3150 2650 50  0001 C CNN
+	1    3150 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 6158C9E5
+P 1550 1250
+F 0 "C?" H 1665 1296 50  0000 L CNN
+F 1 "10uF" H 1665 1205 50  0000 L CNN
+F 2 "" H 1588 1100 50  0001 C CNN
+F 3 "~" H 1550 1250 50  0001 C CNN
+	1    1550 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 6158CDAF
+P 2850 1250
+F 0 "C?" H 2965 1296 50  0000 L CNN
+F 1 "10uF" H 2965 1205 50  0000 L CNN
+F 2 "" H 2888 1100 50  0001 C CNN
+F 3 "~" H 2850 1250 50  0001 C CNN
+	1    2850 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Battery_Cell BT?
+U 1 1 6158D264
+P 750 1300
+F 0 "BT?" H 868 1396 50  0000 L CNN
+F 1 "Battery_Cell" H 868 1305 50  0000 L CNN
+F 2 "" V 750 1360 50  0001 C CNN
+F 3 "~" V 750 1360 50  0001 C CNN
+	1    750  1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Switch:SW_Push SW?
+U 1 1 6158DAFA
+P 4200 2450
+F 0 "SW?" H 4200 2735 50  0000 C CNN
+F 1 "SW_Push" H 4200 2644 50  0000 C CNN
+F 2 "" H 4200 2650 50  0001 C CNN
+F 3 "~" H 4200 2650 50  0001 C CNN
+	1    4200 2450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Regulator_Linear:HT75xx-1-SOT89 U?
+U 1 1 6158E791
+P 2250 1150
+F 0 "U?" H 2250 1517 50  0000 C CNN
+F 1 "HT75xx-1-SOT89" H 2250 1426 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-89-3" H 2250 1475 50  0001 C CIN
+F 3 "https://www.holtek.com/documents/10179/116711/HT75xx-1v250.pdf" H 2250 1250 50  0001 C CNN
+	1    2250 1150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	750  1100 750  1050
+Wire Wire Line
+	750  1050 1550 1050
+Wire Wire Line
+	2550 1050 2850 1050
+Wire Wire Line
+	2850 1050 2850 1100
+Wire Wire Line
+	2850 1400 2850 1450
+Wire Wire Line
+	2850 1450 2250 1450
+Wire Wire Line
+	750  1450 750  1400
+Wire Wire Line
+	1550 1400 1550 1450
+Connection ~ 1550 1450
+Wire Wire Line
+	1550 1450 750  1450
+Wire Wire Line
+	1550 1100 1550 1050
+Connection ~ 1550 1050
+Wire Wire Line
+	1550 1050 1950 1050
+Wire Wire Line
+	2250 1350 2250 1450
+Connection ~ 2250 1450
+Wire Wire Line
+	2250 1450 1900 1450
+$Comp
+L power:GND #PWR?
+U 1 1 61591C35
+P 1900 1500
+F 0 "#PWR?" H 1900 1250 50  0001 C CNN
+F 1 "GND" H 1905 1327 50  0000 C CNN
+F 2 "" H 1900 1500 50  0001 C CNN
+F 3 "" H 1900 1500 50  0001 C CNN
+	1    1900 1500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1900 1500 1900 1450
+Connection ~ 1900 1450
+Wire Wire Line
+	1900 1450 1550 1450
+Wire Wire Line
+	2850 1000 2850 1050
+Connection ~ 2850 1050
+$Comp
+L power:+3V3 #PWR?
+U 1 1 61593A21
+P 2850 1000
+F 0 "#PWR?" H 2850 850 50  0001 C CNN
+F 1 "+3V3" H 2865 1173 50  0000 C CNN
+F 2 "" H 2850 1000 50  0001 C CNN
+F 3 "" H 2850 1000 50  0001 C CNN
+	1    2850 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 1150 3650 1200
+Wire Wire Line
+	4050 1150 4050 1200
+$Comp
+L power:GND #PWR?
+U 1 1 61594C32
+P 3850 1600
+F 0 "#PWR?" H 3850 1350 50  0001 C CNN
+F 1 "GND" H 3855 1427 50  0000 C CNN
+F 2 "" H 3850 1600 50  0001 C CNN
+F 3 "" H 3850 1600 50  0001 C CNN
+	1    3850 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 1500 3650 1600
+Wire Wire Line
+	3650 1600 3850 1600
+Wire Wire Line
+	4050 1500 4050 1600
+Connection ~ 3850 1600
+Wire Wire Line
+	3850 1600 4050 1600
+$Comp
+L power:GND #PWR?
+U 1 1 61597D4E
+P 3150 2850
+F 0 "#PWR?" H 3150 2600 50  0001 C CNN
+F 1 "GND" H 3155 2677 50  0000 C CNN
+F 2 "" H 3150 2850 50  0001 C CNN
+F 3 "" H 3150 2850 50  0001 C CNN
+	1    3150 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 2050 3150 2100
+Wire Wire Line
+	3150 2400 3150 2450
+Wire Wire Line
+	3150 2800 3150 2850
+$Comp
+L power:+3V3 #PWR?
+U 1 1 61599410
+P 6050 850
+F 0 "#PWR?" H 6050 700 50  0001 C CNN
+F 1 "+3V3" H 6065 1023 50  0000 C CNN
+F 2 "" H 6050 850 50  0001 C CNN
+F 3 "" H 6050 850 50  0001 C CNN
+	1    6050 850 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 850  6050 900 
+$Comp
+L power:GND #PWR?
+U 1 1 6159A446
+P 6050 2450
+F 0 "#PWR?" H 6050 2200 50  0001 C CNN
+F 1 "GND" H 6055 2277 50  0000 C CNN
+F 2 "" H 6050 2450 50  0001 C CNN
+F 3 "" H 6050 2450 50  0001 C CNN
+	1    6050 2450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6050 2450 6050 2400
+Text Label 3550 2450 2    50   ~ 0
+BAT_VOL
+Wire Wire Line
+	3550 2450 3150 2450
+Connection ~ 3150 2450
+Wire Wire Line
+	3150 2450 3150 2500
+Text Label 5050 1500 0    50   ~ 0
+BAT_VOL
+Wire Wire Line
+	5050 1500 5450 1500
+$Comp
+L power:GND #PWR?
+U 1 1 6159BE02
+P 4200 2700
+F 0 "#PWR?" H 4200 2450 50  0001 C CNN
+F 1 "GND" H 4205 2527 50  0000 C CNN
+F 2 "" H 4200 2700 50  0001 C CNN
+F 3 "" H 4200 2700 50  0001 C CNN
+	1    4200 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 2650 4200 2700
+Text Label 4350 2200 2    50   ~ 0
+~RST
+Wire Wire Line
+	4200 2250 4200 2200
+Wire Wire Line
+	4200 2200 4350 2200
+Text Label 5300 1100 0    50   ~ 0
+~RST
+Wire Wire Line
+	5450 1100 5300 1100
+$Comp
+L power:+3V3 #PWR?
+U 1 1 6159E0BD
+P 5100 1200
+F 0 "#PWR?" H 5100 1050 50  0001 C CNN
+F 1 "+3V3" H 5115 1373 50  0000 C CNN
+F 2 "" H 5100 1200 50  0001 C CNN
+F 3 "" H 5100 1200 50  0001 C CNN
+	1    5100 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5100 1200 5100 1300
+Wire Wire Line
+	5100 1300 5450 1300
+Text Label 3850 800  2    50   ~ 0
+rLed
+Text Label 4250 800  2    50   ~ 0
+bLed
+Wire Wire Line
+	3650 850  3650 800 
+Wire Wire Line
+	3650 800  3850 800 
+Wire Wire Line
+	4050 850  4050 800 
+Wire Wire Line
+	4050 800  4250 800 
+Text Label 7050 1100 2    50   ~ 0
+boot_sel
+Wire Wire Line
+	7050 1100 6650 1100
+Text Label 7050 1200 2    50   ~ 0
+TX
+Text Label 7050 1400 2    50   ~ 0
+RX
+Wire Wire Line
+	7050 1200 6650 1200
+Wire Wire Line
+	7050 1400 6650 1400
+$Comp
+L power:+BATT #PWR?
+U 1 1 615A3414
+P 750 1000
+F 0 "#PWR?" H 750 850 50  0001 C CNN
+F 1 "+BATT" H 765 1173 50  0000 C CNN
+F 2 "" H 750 1000 50  0001 C CNN
+F 3 "" H 750 1000 50  0001 C CNN
+	1    750  1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	750  1000 750  1050
+Connection ~ 750  1050
+$Comp
+L power:+BATT #PWR?
+U 1 1 615A4292
+P 3150 2050
+F 0 "#PWR?" H 3150 1900 50  0001 C CNN
+F 1 "+BATT" H 3165 2223 50  0000 C CNN
+F 2 "" H 3150 2050 50  0001 C CNN
+F 3 "" H 3150 2050 50  0001 C CNN
+	1    3150 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:Conn_01x05_Male J?
+U 1 1 615B05D3
+P 750 2350
+F 0 "J?" H 850 2800 50  0000 C CNN
+F 1 "Conn_01x05_Male" H 850 2700 50  0000 C CNN
+F 2 "" H 750 2350 50  0001 C CNN
+F 3 "~" H 750 2350 50  0001 C CNN
+	1    750  2350
+	1    0    0    -1  
+$EndComp
+Text Notes 550  2150 0    50   Italic 0
+3V3\n
+Text Notes 550  2250 0    50   Italic 0
+Gnd\n
+Text Notes 550  2350 0    50   Italic 0
+TX
+Text Notes 550  2450 0    50   Italic 0
+RX
+Text Notes 550  2550 0    50   Italic 0
+boot\n
+$EndSCHEMATC
