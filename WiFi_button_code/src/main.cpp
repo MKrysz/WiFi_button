@@ -8,35 +8,32 @@
 
 const int bled = 12;
 const int rled = 4;
+const int btn = 5;
 const float vol_div = 0.175;
-const char serverName[] = "http://192.168.1.102:80";
+const char serverName[] = "http://raspberrypi.local:80";
 const char WIFI_ssid[] = "Y'Ghatan";
 const char WIFI_pass[] = "06094829";
 
 int sendPOST_toWebCounter(const char exercise[32], int number);
 int checkVoltage();
 void warnLowVoltage();
-int connectToWiFi();
 
 void setup() {
-  uint32_t startTime = millis();
   pinMode(rled, OUTPUT);
   pinMode(bled, OUTPUT);
+  pinMode(btn, INPUT);
+  WiFi.begin(WIFI_ssid, WIFI_pass);
   checkVoltage();
   digitalWrite(bled, HIGH);
-  uint32_t time1 = millis();
-  connectToWiFi();
-  uint32_t time2 = millis();
+  if(WiFi.waitForConnectResult() != WL_CONNECTED){
+    digitalWrite(bled, LOW);
+    digitalWrite(rled, HIGH);
+    delay(10000);
+    digitalWrite(rled, LOW);
+    ESP.deepSleep(0);
+  }
   sendPOST_toWebCounter("Nadchwyt", 6);
-  uint32_t time3 = millis();
   digitalWrite(bled, LOW);
-  // Serial.println("Going into deep sleep mode");
-  Serial.begin(9600);
-  Serial.println('\n');
-  Serial.printf("Start time = %u\n", startTime);
-  Serial.printf("time1 = %u\n", time1-startTime);
-  Serial.printf("time2 = %u\n", time2-time1);
-  Serial.printf("time3 = %u\n", time3-time2);
   ESP.deepSleep(0); 
 }
 
@@ -92,26 +89,4 @@ void warnLowVoltage()
     digitalWrite(rled, LOW);
     delay(offTime);
   }
-}
-
-int connectToWiFi() 
-{
-  if(WiFi.SSID() != WIFI_ssid)
-  {
-    WiFi.begin(WIFI_ssid, WIFI_pass);
-  }
-  
-  // Serial.print("Connecting to ");
-  // Serial.print(WIFI_ssid);
-  // Serial.println("...");
-
-  // while (WiFi.status() != WL_CONNECTED) { // Wait for the Wi-Fi to connect
-  //   delay(50);
-  //   // Serial.print('.');
-  // }
-  // Serial.println('\n');
-  // Serial.println("Connection established!");
-  // Serial.print("IP address:\t");
-  // Serial.println(WiFi.localIP());
-  return WiFi.waitForConnectResult();
 }
