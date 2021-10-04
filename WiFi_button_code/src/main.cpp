@@ -8,7 +8,6 @@
 
 const int bled = 12;
 const int rled = 4;
-const int btn = 5;
 const float vol_div = 0.175;
 const char serverName[] = "http://raspberrypi.local:80";
 const char WIFI_ssid[] = "Y'Ghatan";
@@ -17,11 +16,11 @@ const char WIFI_pass[] = "06094829";
 int sendPOST_toWebCounter(const char exercise[32], int number);
 int checkVoltage();
 void warnLowVoltage();
+void blink(uint8_t led, int times);
 
 void setup() {
   pinMode(rled, OUTPUT);
   pinMode(bled, OUTPUT);
-  pinMode(btn, INPUT);
   WiFi.begin(WIFI_ssid, WIFI_pass);
   checkVoltage();
   digitalWrite(bled, HIGH);
@@ -50,13 +49,13 @@ int sendPOST_toWebCounter(const char exercise[32], int number)
   WiFiClient client;
   HTTPClient http;
   sprintf(requestData, "%s_number=%u&%s=%%2B", exercise, number, exercise);
-  // Serial.println("requestForm:");
-  // Serial.println(requestData);
   http.begin(client, serverName);
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   int httpResponse = http.POST(requestData);
-  // Serial.println("HTTP Response:");
-  // Serial.println(httpResponse);
+  if(httpResponse != 200){
+    blink(bled, 3);
+    digitalWrite(bled, HIGH);
+  }
   http.end();
   return 0;
 }
@@ -81,12 +80,17 @@ int checkVoltage()
 
 void warnLowVoltage() 
 {
+  blink(rled, 3);
+}
+
+void blink(uint8_t led, int times)
+{
   const int onTime = 300;
   const int offTime = 300;
-  for(int i = 0; i<3; i++){
-    digitalWrite(rled, HIGH);
+  for(int i = 0; i<times; i++){
+    digitalWrite(led, HIGH);
     delay(onTime);
-    digitalWrite(rled, LOW);
+    digitalWrite(led, LOW);
     delay(offTime);
   }
 }
