@@ -4,9 +4,9 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title ""
-Date ""
-Rev ""
+Title "web_button"
+Date "2021-10-04"
+Rev "v02"
 Comp ""
 Comment1 ""
 Comment2 ""
@@ -30,7 +30,7 @@ U 1 1 6158B3CB
 P 3900 1350
 F 0 "D1" V 3939 1232 50  0000 R CNN
 F 1 "Red" V 3848 1232 50  0000 R CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3900 1350 50  0001 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3900 1350 50  0001 C CNN
 F 3 "~" H 3900 1350 50  0001 C CNN
 	1    3900 1350
 	0    -1   -1   0   
@@ -41,7 +41,7 @@ U 1 1 6158B9BE
 P 4300 1350
 F 0 "D2" V 4339 1232 50  0000 R CNN
 F 1 "Blue" V 4248 1232 50  0000 R CNN
-F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4300 1350 50  0001 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4300 1350 50  0001 C CNN
 F 3 "~" H 4300 1350 50  0001 C CNN
 	1    4300 1350
 	0    -1   -1   0   
@@ -52,7 +52,7 @@ U 1 1 6158BB69
 P 3900 1000
 F 0 "R3" H 3970 1046 50  0000 L CNN
 F 1 "1K" H 3970 955 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3830 1000 50  0001 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 3830 1000 50  0001 C CNN
 F 3 "~" H 3900 1000 50  0001 C CNN
 	1    3900 1000
 	1    0    0    -1  
@@ -63,7 +63,7 @@ U 1 1 6158BE0F
 P 4300 1000
 F 0 "R4" H 4370 1046 50  0000 L CNN
 F 1 "1K" H 4370 955 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4230 1000 50  0001 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 4230 1000 50  0001 C CNN
 F 3 "~" H 4300 1000 50  0001 C CNN
 	1    4300 1000
 	1    0    0    -1  
@@ -74,7 +74,7 @@ U 1 1 6158C103
 P 2650 2400
 F 0 "R1" H 2720 2446 50  0000 L CNN
 F 1 "47K" H 2720 2355 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2580 2400 50  0001 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 2580 2400 50  0001 C CNN
 F 3 "~" H 2650 2400 50  0001 C CNN
 	1    2650 2400
 	1    0    0    -1  
@@ -85,7 +85,7 @@ U 1 1 6158C109
 P 2650 2800
 F 0 "R2" H 2720 2846 50  0000 L CNN
 F 1 "10K" H 2720 2755 50  0000 L CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2580 2800 50  0001 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 2580 2800 50  0001 C CNN
 F 3 "~" H 2650 2800 50  0001 C CNN
 	1    2650 2800
 	1    0    0    -1  
@@ -96,7 +96,7 @@ U 1 1 6158C9E5
 P 1850 1250
 F 0 "C1" H 1965 1296 50  0000 L CNN
 F 1 "10uF" H 1965 1205 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 1888 1100 50  0001 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1888 1100 50  0001 C CNN
 F 3 "~" H 1850 1250 50  0001 C CNN
 	1    1850 1250
 	1    0    0    -1  
@@ -486,7 +486,7 @@ U 1 1 6158CDAF
 P 3150 1250
 F 0 "C2" H 3265 1296 50  0000 L CNN
 F 1 "10uF" H 3265 1205 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 3188 1100 50  0001 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 3188 1100 50  0001 C CNN
 F 3 "~" H 3150 1250 50  0001 C CNN
 	1    3150 1250
 	1    0    0    -1  
@@ -497,7 +497,7 @@ U 1 1 615D2D35
 P 7650 1150
 F 0 "C3" H 7765 1196 50  0000 L CNN
 F 1 "100nF" H 7765 1105 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7688 1000 50  0001 C CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 7688 1000 50  0001 C CNN
 F 3 "~" H 7650 1150 50  0001 C CNN
 	1    7650 1150
 	1    0    0    -1  
@@ -530,8 +530,4 @@ Wire Wire Line
 	7650 1000 7650 950 
 Text Notes 7300 650  0    50   Italic 0
 Decoupling capacitor
-Text Label 7050 1600 2    50   ~ 0
-Btn
-Wire Wire Line
-	7050 1600 6650 1600
 $EndSCHEMATC
