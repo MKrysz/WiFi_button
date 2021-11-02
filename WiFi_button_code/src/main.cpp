@@ -6,9 +6,11 @@
 #include <stdio.h>
 
 
-const int bled = 12;
-const int rled = 4;
+const int bled = 2;
+const int rled = 5;
+const int gled = 0;
 const float vol_div = 0.175;
+const int offSignal = 2;
 const char serverName[] = "http://raspberrypi.local:80";
 const char WIFI_ssid[] = "Y'Ghatan";
 const char WIFI_pass[] = "06094829";
@@ -16,24 +18,49 @@ const char WIFI_pass[] = "06094829";
 int sendPOST_toWebCounter(const char exercise[32], int number);
 int checkVoltage();
 void warnLowVoltage();
-void blink(uint8_t led, int times);
+void blink(uint8_t led, int times, int onTime = 300, int offTime = 300);
+void turnOff();
 
 void setup() {
   pinMode(rled, OUTPUT);
   pinMode(bled, OUTPUT);
-  WiFi.begin(WIFI_ssid, WIFI_pass);
-  checkVoltage();
+  pinMode(gled, OUTPUT);
+  digitalWrite(rled, HIGH);
   digitalWrite(bled, HIGH);
-  if(WiFi.waitForConnectResult() != WL_CONNECTED){
-    digitalWrite(bled, LOW);
-    digitalWrite(rled, HIGH);
-    delay(10000);
-    digitalWrite(rled, LOW);
-    ESP.deepSleep(0);
+  digitalWrite(gled, HIGH);
+  Serial.begin(115200);
+  Serial.println("booting up...");
+  WiFi.begin(WIFI_ssid, WIFI_pass);
+  // checkVoltage(); 
+  int i = 50;
+  while((!WiFi.isConnected())&&(i --> 0)){
+    blink(bled, 1);
   }
-  sendPOST_toWebCounter("Nadchwyt", 6);
+  Serial.println(WiFi.SSID());
+  Serial.println(WiFi.localIP());
   digitalWrite(bled, LOW);
-  ESP.deepSleep(0); 
+  Serial.println("Sending query...");
+  int queryRes = sendPOST_toWebCounter("Nadchwyt", 3);
+  if (queryRes == 200)
+  {
+    Serial.println("Query send successfully");
+    digitalWrite(bled, HIGH);
+    digitalWrite(gled, LOW);
+    delay(1000);
+  }
+  else
+  {
+    Serial.println("An error has occured during sending query");
+    Serial.print("Code received : ");
+    Serial.print(queryRes);
+    Serial.println();
+    digitalWrite(bled, HIGH);
+    digitalWrite(rled, LOW);
+    delay(10000);
+  }
+  
+  Serial.println("shutting off...");
+  turnOff(); 
 }
 
 
@@ -41,6 +68,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
 }
+
 
 
 int sendPOST_toWebCounter(const char exercise[32], int number) 
@@ -52,12 +80,8 @@ int sendPOST_toWebCounter(const char exercise[32], int number)
   http.begin(client, serverName);
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");
   int httpResponse = http.POST(requestData);
-  if(httpResponse != 200){
-    blink(bled, 3);
-    digitalWrite(bled, HIGH);
-  }
   http.end();
-  return 0;
+  return httpResponse;
 }
 
 /*
@@ -83,14 +107,22 @@ void warnLowVoltage()
   blink(rled, 3);
 }
 
-void blink(uint8_t led, int times)
+void blink(uint8_t led, int times, int onTime, int offTime)
 {
-  const int onTime = 300;
-  const int offTime = 300;
   for(int i = 0; i<times; i++){
-    digitalWrite(led, HIGH);
-    delay(onTime);
     digitalWrite(led, LOW);
+    delay(onTime);
+    digitalWrite(led, HIGH);
     delay(offTime);
   }
+}
+
+
+void turnOff()
+{
+  digitalWrite(rled, HIGH);
+  digitalWrite(bled, HIGH);
+  digitalWrite(gled, HIGH);
+  delay(10);
+  ESP.deepSleep(0);
 }
