@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name WiFi_button)(type Legacy)(uri ${KIPRJMOD}/WiFi_button.lib)(options "")(descr ""))
+  (lib (name WiFi_button_schematic-rescue)(type Legacy)(uri ${KIPRJMOD}/WiFi_button_schematic-rescue.lib)(options "")(descr ""))
 )

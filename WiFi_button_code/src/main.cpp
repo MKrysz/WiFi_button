@@ -6,11 +6,12 @@
 #include <stdio.h>
 
 
-const int bled = 2;
-const int rled = 5;
-const int gled = 0;
-const float vol_div = 0.175;
-const int offSignal = 2;
+const int gled = 5;
+const int bled = gled;
+const int rled = 4;
+const float vol_div = 0.1754386;
+const int adc_en = 13;
+const int adc_in = A0;
 const char serverName[] = "http://raspberrypi.local:80";
 const char WIFI_ssid[] = "Y'Ghatan";
 const char WIFI_pass[] = "06094829";
@@ -22,25 +23,28 @@ void blink(uint8_t led, int times, int onTime = 300, int offTime = 300);
 void turnOff();
 
 void setup() {
+  uint32 start_time = millis();
   pinMode(rled, OUTPUT);
   pinMode(bled, OUTPUT);
   pinMode(gled, OUTPUT);
+  pinMode(adc_en, OUTPUT);
   digitalWrite(rled, HIGH);
   digitalWrite(bled, HIGH);
   digitalWrite(gled, HIGH);
+  digitalWrite(adc_en, LOW);
   Serial.begin(115200);
   Serial.println("booting up...");
   WiFi.begin(WIFI_ssid, WIFI_pass);
-  // checkVoltage(); 
+  checkVoltage(); 
   int i = 50;
   while((!WiFi.isConnected())&&(i --> 0)){
-    blink(bled, 1);
+    blink(bled, 1, 100, 100);
   }
   Serial.println(WiFi.SSID());
   Serial.println(WiFi.localIP());
   digitalWrite(bled, LOW);
   Serial.println("Sending query...");
-  int queryRes = sendPOST_toWebCounter("Nadchwyt", 3);
+  int queryRes = sendPOST_toWebCounter("Nadchwyt", 6);
   if (queryRes == 200)
   {
     Serial.println("Query send successfully");
@@ -60,6 +64,8 @@ void setup() {
   }
   
   Serial.println("shutting off...");
+  Serial.print("Overall on duration = ");
+  Serial.print(millis()-start_time);
   turnOff(); 
 }
 
@@ -90,11 +96,14 @@ int sendPOST_toWebCounter(const char exercise[32], int number)
 */
 int checkVoltage() 
 {
-  const float lowBatThreshold = 3.5;
-  int rawRead = analogRead(A0);
+  const float lowBatThreshold = 2.5;
+  digitalWrite(adc_en, HIGH);
+  int rawRead = analogRead(adc_in);
   float readVoltage = (((float)rawRead/1023.00)*(1/vol_div));
   // Serial.println(rawRead);
-  // Serial.println(readVoltage);
+  Serial.print("Uzas = ");
+  Serial.print(readVoltage);
+  Serial.println('V');
   if(readVoltage < lowBatThreshold){
     warnLowVoltage();
     return 1;
