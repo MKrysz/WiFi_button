@@ -255,8 +255,8 @@ Connection ~ 2750 1350
 Connection ~ 1450 1350
 Wire Wire Line
 	1450 1750 2150 1750
-Text Notes 1850 950  0    50   Italic 0
-Voltage regulator
+Text Notes 1750 950  0    50   Italic 0
+Voltage regulator 2.5V
 Text Notes 850  3150 0    50   Italic 0
 Programming Port\n
 Text Notes 2650 2900 0    50   Italic 0
@@ -615,4 +615,131 @@ Wire Wire Line
 	2500 6150 2300 6150
 Wire Wire Line
 	2300 6050 2300 6150
+$Comp
+L power:+BATT #PWR0102
+U 1 1 61A81EC9
+P 4800 5600
+F 0 "#PWR0102" H 4800 5450 50  0001 C CNN
+F 1 "+BATT" H 4815 5773 50  0000 C CNN
+F 2 "" H 4800 5600 50  0001 C CNN
+F 3 "" H 4800 5600 50  0001 C CNN
+	1    4800 5600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:MMBT3906 Q4
+U 1 1 61A825D7
+P 4700 5850
+F 0 "Q4" H 4891 5896 50  0000 L CNN
+F 1 "MMBT3906" H 4891 5805 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 4900 5775 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/2N3906-D.PDF" H 4700 5850 50  0001 L CNN
+	1    4700 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_BJT:MMBT3904 Q3
+U 1 1 61A85704
+P 4300 6150
+F 0 "Q3" V 4500 6100 50  0000 L CNN
+F 1 "MMBT3904" V 4600 5950 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 4500 6075 50  0001 L CIN
+F 3 "https://www.onsemi.com/pub/Collateral/2N3903-D.PDF" H 4300 6150 50  0001 L CNN
+	1    4300 6150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 5950 4400 5850
+Wire Wire Line
+	4400 5850 4500 5850
+Wire Wire Line
+	4800 5650 4800 5600
+$Comp
+L Device:R R7
+U 1 1 61A8AAFD
+P 4800 6250
+F 0 "R7" H 4870 6296 50  0000 L CNN
+F 1 "47K" H 4870 6205 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 4730 6250 50  0001 C CNN
+F 3 "~" H 4800 6250 50  0001 C CNN
+	1    4800 6250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 6100 4800 6050
+$Comp
+L Device:R R10
+U 1 1 61A8D04D
+P 4800 6650
+F 0 "R10" H 4870 6696 50  0000 L CNN
+F 1 "10K" H 4870 6605 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 4730 6650 50  0001 C CNN
+F 3 "~" H 4800 6650 50  0001 C CNN
+	1    4800 6650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 6500 4800 6450
+Text Label 5150 6450 2    50   ~ 0
+ADC_IN
+Wire Wire Line
+	5150 6450 4800 6450
+Connection ~ 4800 6450
+Wire Wire Line
+	4800 6450 4800 6400
+$Comp
+L power:GND #PWR0103
+U 1 1 61A91483
+P 4800 6850
+F 0 "#PWR0103" H 4800 6600 50  0001 C CNN
+F 1 "GND" H 4805 6677 50  0000 C CNN
+F 2 "" H 4800 6850 50  0001 C CNN
+F 3 "" H 4800 6850 50  0001 C CNN
+	1    4800 6850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 6850 4800 6800
+$Comp
+L power:GND #PWR0104
+U 1 1 61A9386F
+P 4400 6400
+F 0 "#PWR0104" H 4400 6150 50  0001 C CNN
+F 1 "GND" H 4405 6227 50  0000 C CNN
+F 2 "" H 4400 6400 50  0001 C CNN
+F 3 "" H 4400 6400 50  0001 C CNN
+	1    4400 6400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4400 6400 4400 6350
+$Comp
+L Device:R R6
+U 1 1 61A976CE
+P 3900 6150
+F 0 "R6" V 3693 6150 50  0000 C CNN
+F 1 "47K" V 3784 6150 50  0000 C CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder" V 3830 6150 50  0001 C CNN
+F 3 "~" H 3900 6150 50  0001 C CNN
+	1    3900 6150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4050 6150 4100 6150
+Text Label 3450 6150 0    50   ~ 0
+ADC_EN
+Wire Wire Line
+	3450 6150 3750 6150
+Text Notes 1400 4550 0    50   ~ 0
+Auto-reset and auto-boot
+Text Notes 4400 5350 0    50   ~ 0
+Measure battery voltage
+Text Label 4950 2300 0    50   ~ 0
+ADC_IN
+Wire Wire Line
+	4950 2300 5300 2300
+Text Label 6900 2600 2    50   ~ 0
+ADC_EN
+Wire Wire Line
+	6500 2600 6900 2600
 $EndSCHEMATC
