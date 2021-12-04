@@ -635,7 +635,7 @@ F 1 "MMBT3906" H 4891 5805 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23_Handsoldering" H 4900 5775 50  0001 L CIN
 F 3 "https://www.onsemi.com/pub/Collateral/2N3906-D.PDF" H 4700 5850 50  0001 L CNN
 	1    4700 5850
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L Transistor_BJT:MMBT3904 Q3
